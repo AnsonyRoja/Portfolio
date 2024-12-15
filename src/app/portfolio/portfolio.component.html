@@ -7,42 +7,125 @@
     <link rel="canonical" href="URL canónica de la página">
 </head>
 
-<div class="container">
-    <h1>💼 Mi Portafolio</h1>
-    <div class="proyectos">
-        <div class="proyecto1">
-            <h2>To-Do List</h2>
-            <a href="https://ansonyroja.github.io/TO-DO/"><img class="todo-image" src="../../assets/To-Do List.jpg"
-                    alt="TO-DO"></a>
-            <p>Esta es Una aplicación de lista de tareas eficiente y fácil de usar construida con Angular. Organiza tus
-                tareas diarias, establece recordatorios y gestiona tus actividades de manera intuitiva</p>
-        </div>
+<body>
 
-        <div class="proyecto1">
-            <h2>Rick And Morty</h2>
-            <a href="https://deploy-frontend-rickandmorty.vercel.app/"><img class="imageRM"
-                    src=" ../../assets/rick-morty-portal.jpg" alt="Rick And Morty" /></a>
-            <p>Explora el emocionante multiverso de Rick and Morty con nuestra aplicación. Encuentra información
-                detallada sobre tus personajes, y adéntrate en las aventuras más extravagantes de la serie animada en
-                este divertido sitio web dedicado a Rick y Morty.</p>
-        </div>
+    <p
+        style="font-size: 2vh; background-color: rgb(0, 0, 0, 0.5); padding: 25px; border-radius: 25px; color: white; position: fixed; left: 160vh ; top: 80vh; z-index: 3;">
+        Resolución de
+        pantalla: {{ screenWidth
+        }} x
+        {{
+        screenHeight }}
+    </p>
+    <div class="main">
 
-        <div class="proyecto1">
-            <a href="https://dev.fixershoes.com/">
-                <h2>FixerShoes</h2>
-                <img class="todo-image" src=" ../../assets/fixerShoes.jpg">
-                <p>
-                    A través de este proyecto de ecommerce centrado en productos para el cuidado del calzado, he
-                    obtenido
-                    una gran experiencia trabajando en equipo para crear una
-                    plataforma que combina la elegancia y la funcionalidad para brindar a los amantes del calzado la
-                    posibilidad de mantener sus zapatos en perfecto estado.
-                </p>
-            </a>
-        </div>
+        <div class="blue-stripe">
 
+        </div>
+        <div class="bg-color-fs">
+
+            <div class="first-sec">
+                <div class="presentation">
+                    <h1>Bienvenido.</h1>
+                    <p>Mi nombre es Ansony Rojas, un desarrollador full-stack. he
+                        trabajado en un ancho gama de proyectos como desarrollador front-end o back-end, desde
+                        aplicaciones
+                        moviles para
+                        gestionar documentos de un ERP, hasta plataformas de comercio
+                        electrónico e-commerce, con un enfoque en creando interfaces limpias y bien diseñadas que no
+                        solo se
+                        ven geniales sino que también brindan una
+                        perfecta experiencia de usuario.</p>
+
+
+                </div>
+                <div class="image-ctn-heros">
+                    <div class='fade'>
+
+                    </div>
+                    <div class="fade-white">
+                        <img src="../../assets/laptop-coffe.png" class="image-blur"
+                            style="width: 50%; position: relative; left: 55px;" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <svg class="svg-curve" viewBox="0 0 1440 79" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-100 79C-100 79 218.416 23.165 693.5 23.165C1168.58 23.165 1487 79 1487 79V0H-100V79Z"
+                fill="#0a001b">
+            </path>
+        </svg>
+        <div class="seccion-projects">
+
+            <h2 class="t-sp">Mis Trabajos</h2>
+            <h3 class="s-sp">Estos son los proyectos en los que he trabajado.</h3>
+
+
+            <div class="proyectos">
+                <div class="proyecto1">
+                    <h2>To-Do List</h2>
+                    <a target="_blank" href="https://ansonyroja.github.io/TO-DO/"><img class="todo-image"
+                            src="../../assets/To-Do List.jpg" alt="TO-DO"></a>
+                    <p class="color-font">Esta es Una aplicación de lista de tareas eficiente y fácil de usar construida
+                        con Angular.
+                        Organiza
+                        tus
+                        tareas diarias, establece recordatorios y gestiona tus actividades de manera intuitiva</p>
+                </div>
+
+                <div class="proyecto1">
+                    <h2>Rick And Morty</h2>
+                    <div class="ctn-rm">
+                        <a target="_blank" href="https://deploy-frontend-rickandmorty.vercel.app/"><img class="imageRM"
+                                src=" ../../assets/rick-morty-portal.jpg" alt="Rick And Morty" /></a>
+                    </div>
+                    <p class="color-font">Explora el emocionante multiverso de Rick and Morty con nuestra aplicación.
+                        Encuentra
+                        información
+                        detallada sobre tus personajes, y adéntrate en las aventuras más extravagantes de la serie
+                        animada
+                        en
+                        este divertido sitio web dedicado a Rick y Morty.</p>
+                </div>
+
+                <div class="proyecto1">
+                    <h2>FixerShoes</h2>
+                    <a target="_blank" href="https://e-commerce.fixershoes.com/">
+                        <div class="ctn-fixer">
+
+                            <img class="todo-image" src=" ../../assets/fixerShoes.jpg">
+
+                        </div>
+                    </a>
+                    <p class="color-font">
+                        A través de este proyecto de ecommerce centrado en productos para el cuidado del
+                        calzado, he
+                        obtenido
+                        una gran experiencia trabajando en equipo para crear una
+                        plataforma que combina la elegancia y la funcionalidad para brindar a los amantes del
+                        calzado la
+                        posibilidad de mantener sus zapatos en perfecto estado.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
 
     </div>
 
 
-</div>
+
+
+</body>
+<svg class="svg-curve" viewBox="0 0 1440 79" xmlns="http://www.w3.org/2000/svg">
+    <path d="M-100 0C-100 0 218.416 55.835 693.5 55.835C1168.58 55.835 1487 0 1487 0V79H-100V0Z" fill="#0a001b">
+    </path>
+</svg>
+<footer>
+    <div class="footer-resize">
+        © 2024 Ansony Rojas
+
+    </div>
+</footer>
