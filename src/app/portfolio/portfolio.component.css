@@ -243,7 +243,7 @@ p {
 
 @media(max-width:575px) {
     h1 {
-        font-size: 70px;
+        font-size: 50px;
     }
 
     .seccion-projects {
