@@ -3,4 +3,32 @@ body {
     padding: 0px;
     margin: 0px;
     background-color: transparent;
+
+}
+
+/* Aplicar a toda la página (body) o a un contenedor específico */
+body::-webkit-scrollbar {
+    width: 14px;
+    /* Define el ancho */
+}
+
+body::-webkit-scrollbar-track {
+    background: gray;
+    /* Color del riel (fondo) */
+    border-radius: 10px;
+    /* Bordes redondeados para el riel */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: blue;
+    /* Color principal del pulgar */
+    border-radius: 10px;
+    /* Bordes redondeados para el pulgar */
+    border: 3px solid #f0f0f0;
+    /* Margen para hacerlo más delgado visualmente */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(4, 4, 80);
+    /* Oscurece al pasar el ratón (hover) */
 }
