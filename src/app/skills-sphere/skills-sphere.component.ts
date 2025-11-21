@@ -330,24 +330,60 @@ export class SkillsSphereComponent implements AfterViewInit, OnDestroy {
 
   // touch fallback (for older mobile)
   onTouchStart(e: TouchEvent) {
+    e.preventDefault(); // 🔥 necesario
     if (e.touches.length === 1) {
       this.isPointerDown = true;
       this.lastX = e.touches[0].clientX;
       this.lastY = e.touches[0].clientY;
     }
   }
+
+  // touch fallback (for older mobile)
   onTouchMove(e: TouchEvent) {
+    e.preventDefault();
     if (!this.isPointerDown || e.touches.length !== 1) return;
-    const dx = e.touches[0].clientX - this.lastX;
-    const dy = e.touches[0].clientY - this.lastY;
-    this.lastX = e.touches[0].clientX;
-    this.lastY = e.touches[0].clientY;
-    this.vx = dx * 0.002;
-    this.vy = dy * 0.002;
+
+    const rect = this.canvasRef.nativeElement.getBoundingClientRect();
+    const scaleX = this.canvasRef.nativeElement.width / rect.width;
+    const scaleY = this.canvasRef.nativeElement.height / rect.height;
+
+    // Posición del touch relativa al canvas
+    const x = (e.touches[0].clientX - rect.left) * scaleX / devicePixelRatio;
+    const y = (e.touches[0].clientY - rect.top) * scaleY / devicePixelRatio;
+
+    // Diferencia desde el último touch
+    const dx = x - this.lastX;
+    const dy = y - this.lastY;
+
+    // Guardamos la última posición
+    this.lastX = x;
+    this.lastY = y;
+
+    // Aplicamos la velocidad igual que en pointerMove
+
+    console.log("eje horizontal", dx);
+
+
+    this.vx = dx * 0.010;
+
+
+
+    if (dy < -145) {
+      this.vy = -dy * 0.002; // vertical
+
+    } else {
+      this.vy = dy * 0.002; // vertical
+
+    }
   }
+
+
+
   onTouchEnd(e: TouchEvent) {
+    e.preventDefault();
     this.isPointerDown = false;
   }
+
 
   private animate = () => {
     this.rafId = requestAnimationFrame(this.animate);
