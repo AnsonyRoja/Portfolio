@@ -1,0 +1,44 @@
+<div class="cards">
+    <h2>{{ title }}</h2>
+    <div class="image-carousel" *ngIf="images.length">
+        <button class="arrow left" (click)="prevImage()" *ngIf="images.length >1">&#10094;</button>
+        <div class="ctn-img">
+
+
+
+            <a [href]="projectLink" target="_blank">
+
+
+
+
+                <img class="carousel-img" [class.slide]="sliding" [src]="images[currentIndex]"
+                    alt="Imagen {{currentIndex + 1}}" (mouseenter)="hideCursor()" (mouseleave)="showCursor()">
+
+            </a>
+
+        </div>
+        <button class="arrow right" (click)="nextImage()" *ngIf="images.length > 1">&#10095;</button>
+
+    </div>
+
+
+    <div class="description-wrapper" #descWrapper>
+        <p #descText>
+            {{ description }}
+        </p>
+    </div>
+    <span *ngIf="description.length > 391" class="toggle-text" [class.expanded-text]="expanded" (click)="toggleText()">
+        {{ expanded ? 'Ver menos' : 'Ver más' }}
+    </span>
+
+    <!-- Este SÍ debe ir fuera del <p> -->
+
+
+    <div class="links">
+        <a [href]="githubLink" target="_blank"> <img (mouseenter)="hideCursor()" (mouseleave)="showCursor()"
+                class="explore-ico" src="../../assets/github-repo.png" alt="">
+        </a>
+        <a [href]="projectLink" target="_blank"><img (mouseenter)="hideCursor()" (mouseleave)="showCursor()"
+                class="explore-ico" src="../../assets/explorer-icono.webp" alt=""></a>
+    </div>
+</div>

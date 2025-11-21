@@ -2,13 +2,21 @@
 body {
     padding: 0px;
     margin: 0px;
-    background-color: transparent;
+    background-color: #0a001b;
+    -webkit-overflow-scrolling: touch;
 
+
+}
+
+
+
+* {
+    cursor: none !important;
 }
 
 /* Aplicar a toda la página (body) o a un contenedor específico */
 body::-webkit-scrollbar {
-    width: 14px;
+    width: 7px;
     /* Define el ancho */
 }
 
@@ -24,7 +32,7 @@ body::-webkit-scrollbar-thumb {
     /* Color principal del pulgar */
     border-radius: 10px;
     /* Bordes redondeados para el pulgar */
-    border: 3px solid #f0f0f0;
+    /* border: 3px solid #f0f0f0; */
     /* Margen para hacerlo más delgado visualmente */
 }
 

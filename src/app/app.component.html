@@ -1,5 +1,18 @@
 <div class="contenedorP">
 
-  <portfolio></portfolio>
+  <button (mouseenter)="hideCursor()" (mouseleave)="showCursor()" class="btn-sound" (click)="toggleMusic()">
+    <span class="sound-icon">{{ (audioService.isPlaying$ | async) ? '🔊' : '🔇' }}</span>
+  </button>
+  <div id="electric-cursor"></div>
+  <div id="cursor-flash"></div>
+  <!-- <portfolio></portfolio> -->
+  <router-outlet />
+
+  <audio #audioPlayer>
+    <source src="../assets/audio/music-background.mp3" type="audio/mpeg">
+  </audio>
+
+
+
 
 </div>

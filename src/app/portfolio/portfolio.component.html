@@ -1,33 +1,32 @@
-<head>
-    <title>Portfolio</title>
-    <meta name="description" content="Programador web, desarrollador de aplicaciones">
-    <meta name="keywords"
-        content="desarrollo web, programador web, desarrollador web, diseño web, React, JavaScript, CSS, HTML, Angular, programación web, portafolio digital">
-    <meta name="author" content="Ansony Rojas">
-    <link rel="canonical" href="URL canónica de la página">
-</head>
+<p
+    style="font-size: 2vh; background-color: rgb(0, 0, 0, 0.5); padding: 25px; border-radius: 25px; color: white; position: fixed; left: 160vh ; top: 80vh; z-index: 3;">
+    Resolución de
+    pantalla: {{ screenWidth
+    }} x
+    {{
+    screenHeight }}
+</p>
+<div class="blue-stripe">
+</div>
+<div class="ctn-porfolio">
 
-<body>
-
-    <!-- <p
-        style="font-size: 2vh; background-color: rgb(0, 0, 0, 0.5); padding: 25px; border-radius: 25px; color: white; position: fixed; left: 160vh ; top: 80vh; z-index: 3;">
-        Resolución de
-        pantalla: {{ screenWidth
-        }} x
-        {{
-        screenHeight }}
-    </p> -->
     <div class="main">
 
-        <div class="blue-stripe">
 
-        </div>
         <div class="bg-color-fs">
+
+
 
             <div class="first-sec">
                 <div class="presentation">
+
+
+                    <app-btn-nvg></app-btn-nvg>
+                    <div class="airplane-container">
+                        <img src="../../assets/avion.png" class="airplane" alt="airplane">
+                    </div>
                     <h1>Bienvenido.</h1>
-                    <p>Mi nombre es Ansony Rojas, un desarrollador full-stack. he
+                    <p class="prr-pres">Mi nombre es Ansony Rojas, un desarrollador full-stack. he
                         trabajado en un ancho gama de proyectos como desarrollador front-end o back-end, desde
                         aplicaciones
                         moviles para
@@ -44,7 +43,7 @@
 
                     </div>
                     <div class="fade-white">
-                        <img src="./assets/laptop-coffe.png" class="image-blur"
+                        <img src="./assets/laptop-coffe.png" class="image-blur  hover-3d-effect"
                             style="width: 50%; position: relative; left: 55px;" />
                     </div>
                 </div>
@@ -59,77 +58,67 @@
 
 
         <div class="seccion-projects">
+            <div class="ctn-btn">
 
-            <h2 class="t-sp">Mis Trabajos</h2>
-            <h3 class="s-sp">Estos son los proyectos en los que he trabajado.</h3>
+                <div class="words">
+                    <h2 class="t-sp">Mis Trabajos</h2>
+                    <h3 class="s-sp">Estos son los proyectos en los que he trabajado.</h3>
+                </div>
+            </div>
 
 
             <div class="proyectos">
-                <div class="cards">
-                    <h2>To-Do List</h2>
-                    <div class="ctn-img">
-                        <a target="_blank" href="https://ansonyroja.github.io/TO-DO/"><img class="icon"
-                                src="./assets/To-Do List.jpg" alt="TO-DO"></a>
-                    </div>
-                    <p class="color-font">Esta es Una aplicación de lista de tareas eficiente y fácil de usar construida
-                        con Angular.
-                        Organiza
-                        tus
-                        tareas diarias, establece recordatorios y gestiona tus actividades de manera intuitiva</p>
-                </div>
 
-                <div class="cards">
-                    <h2>Rick And Morty</h2>
-                    <div class="ctn-img">
-                        <a target="_blank" href="https://deploy-frontend-rickandmorty.vercel.app/"><img class="icon"
-                                src=" ./assets/rick-morty-portal.jpg" alt="Rick And Morty" /></a>
-                    </div>
-                    <p class="color-font">Explora el emocionante multiverso de Rick and Morty con nuestra aplicación.
+
+                <app-card title="To-Do List"
+                    description="Esta es Una aplicación de lista de tareas eficiente y fácil de usar construida con Angular..."
+                    [images]="['./assets/To-Do List.jpg']" projectLink="https://ansonyroja.github.io/TO-DO/"
+                    githubLink="https://github.com/AnsonyRoja/TO-DO">
+                </app-card>
+
+                <app-card title="Rick And Morty" description="Explora el emocionante multiverso de Rick and Morty con nuestra aplicación.
                         Encuentra
                         información
                         detallada sobre tus personajes, y adéntrate en las aventuras más extravagantes de la serie
                         animada
                         en
-                        este divertido sitio web dedicado a Rick y Morty.</p>
-                </div>
-
-                <div class="cards">
-                    <h2>FixerShoes</h2>
-                    <a target="_blank" href="https://e-commerce.fixershoes.com/">
-                        <div class="ctn-img">
-
-                            <img class="icon" src="./assets/fixerShoes.jpg">
-
-                        </div>
-                    </a>
-                    <p class="color-font">
-                        A través de este proyecto de ecommerce centrado en productos para el cuidado del
+                        este divertido sitio web dedicado a Rick y Morty."
+                    [images]="['./assets/rick-morty-portal.jpg']"
+                    projectLink="https://deploy-frontend-rickandmorty.vercel.app/"
+                    githubLink="https://github.com/AnsonyRoja/deploy-frontend-rickandmorty">
+                </app-card>
+                <app-card title="FixerShoes" description="A través de este proyecto de ecommerce centrado en productos para el cuidado del
                         calzado, he
                         obtenido
                         una gran experiencia trabajando en equipo para crear una
                         plataforma que combina la elegancia y la funcionalidad para brindar a los amantes del
                         calzado la
-                        posibilidad de mantener sus zapatos en perfecto estado.
-                    </p>
+                        posibilidad de mantener sus zapatos en perfecto estado y cómodos al andar."
+                    [images]="['./assets/fixerShoes.jpg', './assets/fixer-shoes-products.png']"
+                    projectLink="https://e-commerce.fixershoes.com/"
+                    githubLink="https://github.com/JMPenyaP/fixerstore">
+                </app-card>
 
-                </div>
+
+
 
             </div>
         </div>
+        <svg class="svg-curve-bottom" viewBox="0 0 1440 79" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-100 0C-100 0 218.416 55.835 693.5 55.835C1168.58 55.835 1487 0 1487 0V79H-100V0Z" fill="#0a001b">
+            </path>
+        </svg>
+        <div class="footer">
+            <div class="footer-resize">
+                <span class="font-foot"> © 2024 Ansony Rojas</span>
 
+            </div>
+        </div>
     </div>
 
 
 
 
-</body>
-<svg class="svg-curve-bottom" viewBox="0 0 1440 79" xmlns="http://www.w3.org/2000/svg">
-    <path d="M-100 0C-100 0 218.416 55.835 693.5 55.835C1168.58 55.835 1487 0 1487 0V79H-100V0Z" fill="#0a001b">
-    </path>
-</svg>
-<footer>
-    <div class="footer-resize">
-        © 2024 Ansony Rojas
 
-    </div>
-</footer>
+
+</div>

@@ -1,0 +1,12 @@
+<div class="info-btn">
+    <a [routerLink]="idPort ? ['/', idPort] : ['/']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        Home
+    </a>
+    <a routerLink="/skills-sphere" routerLinkActive="active">
+        Sobre mi
+    </a>
+    <a routerLink="/rss" routerLinkActive="active">
+        Rss
+    </a>
+</div>

@@ -1,0 +1,173 @@
+.explore-ico {
+    width: 25px;
+}
+
+h2 {
+    font-family: "Lora", Helvetica, sans-serif;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 260px;
+    background-color: white;
+    min-height: 450px;
+    height: auto;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    transition: transform 0.35s ease,
+        box-shadow 0.35s ease,
+        width 0.35s ease;
+}
+
+.description-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 122px;
+    height: 100px;
+    overflow: hidden;
+    width: 260px;
+    padding: 10px;
+    margin-bottom: 15px;
+    transition: height 0.4s ease;
+
+}
+
+.description-wrapper.expanded {
+    /*1000 caracteres maximos*/
+    max-height: 1000px;
+
+}
+
+.toggle-text {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    user-select: none;
+    color: #003366;
+
+}
+
+.toggle-text.expanded-text {
+    color: #4b89ff;
+
+}
+
+.toggle-text:hover {
+    text-decoration: underline;
+}
+
+.cards:hover {
+    transform: scale(1.03) translateY(-5px);
+
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
+}
+
+.description-wrapper p {
+
+    /* justifica el texto */
+    word-wrap: break-word;
+    /* evita que las palabras largas salgan del contenedor */
+    margin: 0;
+    padding: 5px;
+}
+
+
+
+
+
+.ctn-img {
+    margin-top: 05px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 210px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0.5px 0.5px 0.5px 2px rgba(0, 0, 0, 0.2)
+}
+
+
+
+
+.image-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: fill;
+
+}
+
+/* IMAGEN DEL CARRUSEL */
+.carousel-img {
+    width: 210px;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 12px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* EFECTO SLIDE */
+.carousel-img.slide {
+    transform: translateX(-20px);
+    opacity: 0;
+}
+
+/* FLECHAS */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border: none;
+    font-size: 1.6rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+    transition: background 0.2s ease;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.arrow.left {
+    left: -13px;
+}
+
+.arrow.right {
+    right: -13px;
+}
+
+.color-font {
+    color: black;
+}
+
+.links {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+p {
+    font-family: "Lora", Arial, Helvetica, sans-serif;
+
+}

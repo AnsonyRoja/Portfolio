@@ -1,10 +1,30 @@
-html,
-body {
-    margin: 0px;
-    padding: 0px;
-    background-color: transparent;
+@font-face {
+
+    font-family: "Lora";
+    src: url("../../assets/fonts/Lora/Lora-VariableFont_wght.ttf");
+    font-weight: normal;
+    font-style: normal;
 
 }
+
+.ctn-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 20px;
+    width: 100%;
+}
+
+
+
+
+.words {
+    text-align: center;
+    flex: 1;
+}
+
+
 
 
 
@@ -32,20 +52,27 @@ body {
     margin-bottom: 0;
     position: relative;
     bottom: 1px;
+    width: 100%;
 
 }
 
 .svg-curve-bottom {
     display: block;
+    width: 100%;
     margin-bottom: 0;
     position: relative;
+
     top: 1px;
+
+
 }
 
-footer {
+
+.footer {
+    width: 100%;
     padding: 0px;
     margin: 0px;
-
+    height: 32vh;
     background-color: #0a001b;
 
 }
@@ -54,19 +81,14 @@ footer {
     display: flex;
     flex-direction: column;
     width: 60%;
-    justify-content: center;
-    padding: 0px 0px 0px 50px;
-    margin-bottom: 90px;
-
+    justify-content: flex-start;
 }
 
 .main {
-
-    width: auto;
-    height: auto;
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 10px;
     background-color: white;
-
-
 }
 
 .bg-color-fs {
@@ -76,9 +98,8 @@ footer {
 }
 
 .first-sec {
-    max-width: 1250px;
+    max-width: 1200px;
     min-height: 600px;
-    margin: auto;
     display: flex;
     flex-direction: row;
     background-color: #0a001b;
@@ -106,6 +127,7 @@ footer {
 
 }
 
+
 p {
     color: white;
 }
@@ -124,12 +146,25 @@ p {
     z-index: 1;
 }
 
+
+
+
 .fade-white img {
     width: 300px;
     z-index: 2;
 
+
 }
 
+.hover-3d-effect {
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.hover-3d-effect:hover {
+    transform: perspective(1000px) rotateX(8deg) rotateY(8deg) scale3d(1.05, 1.05, 1.05);
+}
 
 .seccion-projects {
     max-width: 1250px;
@@ -153,7 +188,7 @@ a {
     width: 100%;
     height: 100%;
     margin: 0px;
-    object-fit: c;
+    object-fit: contain;
 
 }
 
@@ -174,19 +209,6 @@ h2 {
 
 
 
-.cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: 250px;
-    background-color: #fff;
-    height: 550px;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
 
 
 h1 {
@@ -194,18 +216,39 @@ h1 {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 100px;
     color: white;
-    margin-bottom: 0px;
+    font-family: "Lora", Helvetica, sans-serif;
 
 }
 
-.color-font {
-    color: black;
+
+
+.t-sp {
+
+    font-family: "Lora", Helvetica, sans-serif;
+
+}
+
+.s-sp {
+    font-family: "Lora", Helvetica, sans-serif;
+
+}
+
+.prr-pres {
+    font-family: "Lora", Helvetica, sans-serif;
+
+}
+
+.font-foot {
+    font-family: "Lora", Helvetica, sans-serif;
+
+
 }
 
 h2 {
     font-size: 1.5rem;
     line-height: 0px;
     margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h3 {
@@ -218,21 +261,60 @@ p {
 
 }
 
-.ctn-img {
-    margin-top: 25px;
-    display: block;
+
+
+.ctn-porfolio {
+    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
-    overflow: hidden;
+    flex-direction: column;
 
-    border-radius: 15px;
-    box-shadow: 0.5px 0.5px 0.5px 2px rgba(0, 0, 0, 0.2)
+
 }
 
-.ctn-img img {
+.airplane-container {
+    position: fixed;
+    top: 50%;
+    /* Altura inicial */
+    left: -150px;
+    /* Comienza fuera de pantalla */
+    pointer-events: none;
+    z-index: 9999;
+}
 
-    margin: 0px;
+.airplane {
+    width: 120px;
+    animation: airplaneFlight 8s ease-in-out infinite;
+}
+
+@keyframes airplaneFlight {
+    0% {
+        transform: translateX(0) translateY(0) rotate(-10deg) scale(0.8);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    30% {
+        transform: translateX(40vw) translateY(-10vh) rotate(-3deg) scale(0.9);
+    }
+
+    60% {
+        transform: translateX(70vw) translateY(10vh) rotate(8deg) scale(1);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translateX(100vw) translateY(-35vh) rotate(15deg) scale(1.1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(110vw) translateY(-45vh) rotate(5deg) scale(1.2);
+    }
 }
 
 
@@ -241,11 +323,35 @@ p {
     .image-ctn-heros {
         display: none;
     }
+
+    .first-sec {
+        align-items: flex-start;
+        padding-left: 19px;
+        padding-top: 2px;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    .presentation {
+        width: 100%;
+        padding-right: 10px;
+
+    }
+
+    .words {
+        padding: 3px;
+    }
+
+    .main {
+        width: 100%;
+    }
 }
 
 @media(max-width:575px) {
     h1 {
-        font-size: 50px;
+        font-size: 16.5vw;
     }
 
     .seccion-projects {

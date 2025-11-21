@@ -1,0 +1,109 @@
+/* -- CONTENEDOR GENERAL -- */
+.rss-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* centra todo horizontalmente */
+    padding: 50px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    /* centra el contenedor completo en la página */
+    color: #fff;
+}
+
+.youtube:hover {
+    background: #ff0000;
+}
+
+
+.blue-stripe {
+    width: 100%;
+
+    height: 5px;
+    background-color: blue;
+
+}
+
+.ctn-btn {
+    width: 100%;
+    padding-left: 22px;
+    align-self: flex-start;
+    /* deja el botón al inicio (izquierda) */
+
+}
+
+/* -- TITULOS -- */
+.rss-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.rss-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+/* -- GRID -- */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 25px;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* -- CARDS -- */
+.social-card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.25s;
+    box-shadow: 0 0 10px #0004;
+}
+
+.social-card svg {
+    width: 40px;
+    margin-bottom: 10px;
+    fill: #fff;
+    transition: 0.3s;
+}
+
+.social-card span {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* -- HOVER ANIMATIONS -- */
+.social-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 6px 15px #0006;
+}
+
+/* -- COLORES INDIVIDUALES -- */
+.github:hover {
+    background: #333;
+}
+
+.linkedin:hover {
+    background: #0077b5;
+}
+
+.facebook:hover {
+    background: #1877f2;
+}
+
+.instagram:hover {
+    background: linear-gradient(45deg,
+            #feda75,
+            #fa7e1e,
+            #d62976,
+            #962fbf,
+            #4f5bd5);
+}

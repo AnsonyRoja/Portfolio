@@ -1,0 +1,86 @@
+<div class="blue-stripe">
+</div>
+<div class="ctn-info-ansony">
+
+
+    <div class="main">
+        <div class="ctn-btn">
+            <app-btn-nvg />
+
+
+        </div>
+
+        <div class="ctn-section ">
+            <hr class="lane-up">
+            <h2>Quien Soy </h2>
+            <hr class="lane-up">
+        </div>
+        <div class="secction-video">
+
+            <div class="video-container" (mouseenter)="hideCursor()" (mouseleave)="showCursor()">
+                <iframe id="youtube-player" src="https://www.youtube.com/embed/3dWsY8gIwXg?enablejsapi=1"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+                <div class="iframe-overlay"></div>
+            </div>
+        </div>
+
+        <hr class="lane-up">
+        <div class="ctn-section">
+            <h2>Habilidades Técnicas </h2>
+        </div>
+        <hr class="lane-up">
+        <br>
+        <div class="skills-container">
+
+            <!-- LISTA DE SKILLS -->
+
+            <div class="skills-list" [class.expanded]="showAllSkills">
+                <div class="skill-item" *ngFor="let skill of (isMobile
+            ? (showAllSkills ? skills : skills | slice:0:3)
+            : skills)">
+                    <span class="skill-name">{{ skill.name }}</span>
+
+                    <div class="skill-bar">
+                        <div class="skill-fill" [style.width.%]="skill.level"></div>
+                    </div>
+
+                    <span class="skill-percent">{{ skill.level }}%</span>
+                </div>
+                <button *ngIf="isMobile" class="toggle-btn" (click)="toggleSkills() " [class.clicked]="buttonClicked">
+                    {{ showAllSkills ? 'Ver menos ▲' : 'Ver más ▼' }}
+                </button>
+            </div>
+
+
+
+            <!-- ESFERA -->
+            <div class="skills-sphere-container" (pointerdown)="onPointerDown($event)"
+                (pointermove)="onPointerMove($event)" (pointerup)="onPointerUp($event)"
+                (pointerleave)="onPointerUp($event)" (touchstart)="onTouchStart($event)"
+                (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd($event)"
+                (mousemove)="onCanvasMouseMove($event)">
+
+                <canvas #canvas></canvas>
+
+            </div>
+            <!-- Optional overlay for title or small hint -->
+            <div class="hint">Arrastra o toca para rotar</div>
+        </div>
+        <hr class="lane-up">
+        <div class="ctn-section">
+            <h2>Contribuciones Github </h2>
+        </div>
+        <hr class="lane-up">
+        <br>
+        <!-- CONTRIBUCIONES DE GITHUB -->
+        <div class="github-contributions">
+            <img src="https://ghchart.rshah.org/AnsonyRoja" alt="GitHub Contribution Chart" draggable="false" />
+        </div>
+
+
+    </div>
+
+</div>
