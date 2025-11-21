@@ -344,9 +344,10 @@ export class SkillsSphereComponent implements AfterViewInit, OnDestroy {
     if (!this.isPointerDown || e.touches.length !== 1) return;
 
     const rect = this.canvasRef.nativeElement.getBoundingClientRect();
+
     const scaleX = this.canvasRef.nativeElement.width / rect.width;
     const scaleY = this.canvasRef.nativeElement.height / rect.height;
-
+    const threshold = rect.height;
     // Posición del touch relativa al canvas
     const x = (e.touches[0].clientX - rect.left) * scaleX / devicePixelRatio;
     const y = (e.touches[0].clientY - rect.top) * scaleY / devicePixelRatio;
@@ -366,9 +367,9 @@ export class SkillsSphereComponent implements AfterViewInit, OnDestroy {
 
     this.vx = dx * 0.0002;
 
-
-
-    if (dy < -145) {
+    console.log("eje vertical", dy);
+    console.log('valor del treshol', threshold);
+    if (dy < -threshold) {
       this.vy = -dy * 0.0002; // vertical
 
     } else {
