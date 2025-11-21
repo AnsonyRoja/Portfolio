@@ -365,15 +365,15 @@ export class SkillsSphereComponent implements AfterViewInit, OnDestroy {
 
 
     // Sensibilidad Eje horizontal
-    this.vx = dx * 0.0002;
+    this.vx = dx * 0.000445;
 
 
     //  Sensibilidad en el Eje vertical
     if (dy < -threshold) {
-      this.vy = -dy * 0.0002;
+      this.vy = -dy * 0.00043;
 
     } else {
-      this.vy = dy * 0.0002;
+      this.vy = dy * 0.0006;
 
     }
   }
