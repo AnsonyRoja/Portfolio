@@ -342,25 +342,41 @@ export class SkillsSphereComponent implements AfterViewInit, OnDestroy {
     if (!this.isPointerDown || e.touches.length !== 1) return;
 
     const rect = this.canvasRef.nativeElement.getBoundingClientRect();
+
     const scaleX = this.canvasRef.nativeElement.width / rect.width;
     const scaleY = this.canvasRef.nativeElement.height / rect.height;
-
+    const threshold = rect.height;
+    // Posición del touch relativa al canvas
     const x = (e.touches[0].clientX - rect.left) * scaleX / devicePixelRatio;
     const y = (e.touches[0].clientY - rect.top) * scaleY / devicePixelRatio;
 
+    // Diferencia desde el último touch
     const dx = x - this.lastX;
     const dy = y - this.lastY;
 
+    // Guardamos la última posición
     this.lastX = x;
     this.lastY = y;
 
-    const sensitivityX = 0.02 * (rect.width / 400);
-    const sensitivityY = 0.02 * (rect.height / 400);
+    // Aplicamos la velocidad igual que en pointerMove
 
-    this.vx = dx * sensitivityX;
-    this.vy = dy * sensitivityY;
+    console.log("eje horizontal", dx);
+
+
+
+    // Sensibilidad Eje horizontal
+    this.vx = dx * 0.0002;
+
+
+    //  Sensibilidad en el Eje vertical
+    if (dy < -threshold) {
+      this.vy = -dy * 0.0002;
+
+    } else {
+      this.vy = dy * 0.0002;
+
+    }
   }
-
 
 
 
