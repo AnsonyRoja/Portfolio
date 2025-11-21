@@ -365,7 +365,7 @@ export class SkillsSphereComponent implements AfterViewInit, OnDestroy {
 
 
     // izquierda
-    this.vx = dx * 0.0002;
+    this.vx = dx * 0.001;
 
 
     console.log("eje vertical", dy);
