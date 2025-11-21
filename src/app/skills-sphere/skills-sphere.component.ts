@@ -313,75 +313,24 @@ export class SkillsSphereComponent implements AfterViewInit, OnDestroy {
   }
 
   onPointerMove(e: PointerEvent) {
+    this.isMobile = window.innerWidth < 768;
+
     if (!this.isPointerDown) return;
     const dx = e.clientX - this.lastX;
     const dy = e.clientY - this.lastY;
     this.lastX = e.clientX;
     this.lastY = e.clientY;
-    this.vx = dx * 0.002;
-    this.vy = dy * 0.002;
+    if (this.isMobile) {
+      this.vx = dx * 0.02;
+      this.vy = dy * 0.02;
+    } else {
+      this.vx = dx * 0.002;
+      this.vy = dy * 0.002;
+    }
+
   }
 
   onPointerUp(e: PointerEvent) {
-    this.isPointerDown = false;
-  }
-
-  // touch fallback (for older mobile)
-  onTouchStart(e: TouchEvent) {
-    e.preventDefault(); // 🔥 necesario
-    if (e.touches.length === 1) {
-      this.isPointerDown = true;
-      this.lastX = e.touches[0].clientX;
-      this.lastY = e.touches[0].clientY;
-    }
-  }
-
-  // touch fallback (for older mobile)
-  onTouchMove(e: TouchEvent) {
-    e.preventDefault();
-    if (!this.isPointerDown || e.touches.length !== 1) return;
-
-    const rect = this.canvasRef.nativeElement.getBoundingClientRect();
-
-    const scaleX = this.canvasRef.nativeElement.width / rect.width;
-    const scaleY = this.canvasRef.nativeElement.height / rect.height;
-    const threshold = rect.height;
-    // Posición del touch relativa al canvas
-    const x = (e.touches[0].clientX - rect.left) * scaleX / devicePixelRatio;
-    const y = (e.touches[0].clientY - rect.top) * scaleY / devicePixelRatio;
-
-    // Diferencia desde el último touch
-    const dx = x - this.lastX;
-    const dy = y - this.lastY;
-
-    // Guardamos la última posición
-    this.lastX = x;
-    this.lastY = y;
-
-    // Aplicamos la velocidad igual que en pointerMove
-
-    console.log("eje horizontal", dx);
-
-
-
-    // Sensibilidad Eje horizontal
-    this.vx = dx * 0.000445;
-
-
-    //  Sensibilidad en el Eje vertical
-    if (dy < -threshold) {
-      this.vy = -dy * 0.00043;
-
-    } else {
-      this.vy = dy * 0.0006;
-
-    }
-  }
-
-
-
-  onTouchEnd(e: TouchEvent) {
-    e.preventDefault();
     this.isPointerDown = false;
   }
 
