@@ -69,8 +69,6 @@ export class SkillsSphereComponent implements AfterViewInit, OnDestroy {
     // Si vuelve a escritorio, mostrar todas las skills sin botón
     if (!this.isMobile) {
       this.showAllSkills = true;
-    } else {
-      this.showAllSkills = false;
     }
 
     console.log(this.isMobile);
@@ -365,7 +363,10 @@ export class SkillsSphereComponent implements AfterViewInit, OnDestroy {
     console.log("eje horizontal", dx);
 
 
+
+    // izquierda
     this.vx = dx * 0.0002;
+
 
     console.log("eje vertical", dy);
     console.log('valor del treshol', threshold);
