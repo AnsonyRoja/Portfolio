@@ -3,6 +3,7 @@
     margin: 0px;
     padding: 0px;
 
+
 }
 
 
@@ -72,7 +73,17 @@
 
 
 
-@media (max-width:500px) {}
+@media (max-width:500px) {
+    #cursor-flash {
+        display: none;
+    }
+
+    #electric-cursor {
+        display: none;
+    }
+
+
+}
 
 @keyframes electricGlow {
     0% {
