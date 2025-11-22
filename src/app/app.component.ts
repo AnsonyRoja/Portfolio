@@ -41,10 +41,6 @@ export class AppComponent {
     });
 
   }
-  ngOnDestroy() {
-
-    this.audioSub.onAudioEnded();
-  }
 
 
   toggleMusic() {

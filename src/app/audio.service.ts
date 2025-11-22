@@ -17,9 +17,9 @@ export class AudioService {
 
   registerAudioElement(audio: HTMLAudioElement) {
     this._audioElement = audio;
-    this._audioElement.addEventListener('ended', () => {
+    this._audioElement.onended = () => {
       this._isPlaying$.next(false);
-    });
+    };
   }
 
   // El usuario activa o desactiva la música de fondo
