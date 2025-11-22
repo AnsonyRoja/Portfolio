@@ -32,7 +32,7 @@ export class AppComponent {
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         // Pausar audio si la página no está visible
-        this.audioService.pause();
+        this.audioService.setUserEnabled(false);
       }
     });
 
