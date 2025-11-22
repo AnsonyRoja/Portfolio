@@ -3,7 +3,7 @@
 }
 
 h2 {
-    font-family: "Lora", Helvetica, sans-serif;
+    font-family: "Hommemade-apple", Helvetica, sans-serif;
 }
 
 .cards {
@@ -117,7 +117,7 @@ h2 {
     height: 100%;
     object-fit: fill;
     border-radius: 12px;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    transition: transform 0.3s ease, opacity 0.4s ease;
 }
 
 /* EFECTO SLIDE */
@@ -168,6 +168,6 @@ h2 {
 }
 
 p {
-    font-family: "Lora", Arial, Helvetica, sans-serif;
+    font-family: "Hommemade-apple", Arial, Helvetica, sans-serif;
 
 }

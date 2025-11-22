@@ -136,7 +136,6 @@ canvas {
     height: 100%;
     z-index: 100000;
     touch-action: none;
-    /* Muy importante para evitar scroll mientras se toca */
 
 }
 
@@ -154,7 +153,6 @@ canvas {
 
     user-select: none;
     pointer-events: none;
-    /* No interfiere con la esfera */
 }
 
 

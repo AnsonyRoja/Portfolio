@@ -63,6 +63,7 @@ export class SkillsSphereComponent implements AfterViewInit, OnDestroy {
 
 
 
+
   checkScreenSize() {
     this.isMobile = window.innerWidth <= 500; // Ajusta si quieres otro breakpoint
 

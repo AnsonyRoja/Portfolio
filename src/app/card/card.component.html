@@ -12,7 +12,8 @@
 
 
                 <img class="carousel-img" [class.slide]="sliding" [src]="images[currentIndex]"
-                    alt="Imagen {{currentIndex + 1}}" (mouseenter)="hideCursor()" (mouseleave)="showCursor()">
+                    alt="Imagen {{currentIndex + 1}}" (mouseenter)="hideCursor()" (mouseleave)="showCursor()"
+                    [class.active]="currentIndex">
 
             </a>
 
