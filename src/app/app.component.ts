@@ -29,6 +29,13 @@ export class AppComponent {
       this.isPlaying = playing;
     });
 
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        // Pausar audio si la página no está visible
+        this.audioService.pause();
+      }
+    });
+
     document.addEventListener("mousemove", (e) => {
       const offsetX = 25; // ancho / 2
       const offsetY = 25; // alto / 2
