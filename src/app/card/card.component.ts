@@ -29,6 +29,10 @@ export class CardComponent {
   sliding = false;
 
   nextImage() {
+    if (this.sliding) return; // ⛔ Evita spam de clics
+
+    if (!this.images || this.images.length === 0) return; // ⛔ No hay imágenes
+
     this.sliding = true;
 
     setTimeout(() => {
@@ -37,6 +41,19 @@ export class CardComponent {
     }, 200);
   }
 
+  prevImage() {
+    if (this.sliding) return; // ⛔ Evita spam de clics
+
+    if (!this.images || this.images.length === 0) return; // ⛔ No hay imágenes
+
+    this.sliding = true;
+
+    setTimeout(() => {
+      this.currentIndex =
+        (this.currentIndex - 1 + this.images.length) % this.images.length;
+      this.sliding = false;
+    }, 200);
+  }
 
   toggleText() {
     const wrapper = this.descWrapper.nativeElement;
@@ -54,15 +71,7 @@ export class CardComponent {
   }
 
 
-  prevImage() {
-    this.sliding = true;
 
-    setTimeout(() => {
-      this.currentIndex =
-        (this.currentIndex - 1 + this.images.length) % this.images.length;
-      this.sliding = false;
-    }, 200);
-  }
   hideCursor() {
     const electric = document.getElementById('electric-cursor');
     const flash = document.getElementById('cursor-flash');

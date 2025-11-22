@@ -1,12 +1,20 @@
-<div class="info-btn">
-    <a [routerLink]="idPort ? ['/', idPort] : ['/']" routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}">
-        Home
-    </a>
-    <a routerLink="/skills-sphere" routerLinkActive="active">
-        Sobre mi
-    </a>
-    <a routerLink="/rss" routerLinkActive="active">
-        Rss
-    </a>
+<div class="ctn-btn">
+    <button class="menu-toggle" (click)="toggleMenu()">
+        ☰
+    </button>
+    <div class="info-btn" [class.mobile-open]="menuOpen">
+
+
+        <a [routerLink]="idPort ? ['/', idPort] : ['/']" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+            Home
+        </a>
+        <a routerLink="/skills-sphere" routerLinkActive="active">
+            Sobre mi
+        </a>
+        <a routerLink="/rss" routerLinkActive="active">
+            Rss
+        </a>
+    </div>
+
 </div>

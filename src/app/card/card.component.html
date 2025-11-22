@@ -1,7 +1,8 @@
 <div class="cards">
     <h2>{{ title }}</h2>
     <div class="image-carousel" *ngIf="images.length">
-        <button class="arrow left" (click)="prevImage()" *ngIf="images.length >1">&#10094;</button>
+        <button class="arrow left" (click)="prevImage()" [disabled]="currentIndex === 0 || images.length <= 1"
+            *ngIf="images.length >1">&#10094;</button>
         <div class="ctn-img">
 
 
@@ -18,7 +19,9 @@
             </a>
 
         </div>
-        <button class="arrow right" (click)="nextImage()" *ngIf="images.length > 1">&#10095;</button>
+        <button class="arrow right" (click)="nextImage()"
+            [disabled]="currentIndex === images.length - 1 || images.length <= 1"
+            *ngIf="images.length > 1">&#10095;</button>
 
     </div>
 

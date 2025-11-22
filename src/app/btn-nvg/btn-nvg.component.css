@@ -28,3 +28,60 @@
     background-color: #f0f0f0;
     color: #0a001b;
 }
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+
+@media (max-width: 500px) {
+
+    /* Mostrar el botón hamburguesa */
+    .menu-toggle {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .ctn-btn {
+
+        height: 40px;
+        padding-bottom: 10px;
+
+    }
+
+    /* El menú se oculta inicialmente */
+    .info-btn {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        padding: 10px;
+        border-radius: 8px;
+        width: 150px;
+        gap: 10px;
+        animation: fadeMenu 0.3s ease;
+    }
+
+
+    /* Cuando se abre */
+    .info-btn.mobile-open {
+        display: flex;
+    }
+
+    /* Animación suave */
+    @keyframes fadeMenu {
+        from {
+            opacity: 0;
+            transform: translateY(-5px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
